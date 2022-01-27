@@ -49,28 +49,32 @@
 	var geojson1 = new L.GeoJSON.AJAX("./data/Arzi_2019.geojson");
 	
 	geojson1.on('data:loaded', function(){
-		geojson1.setStyle({fillColor: '#0000FF'});
+		geojson1.setStyle({color: '#ffaaaa',fillOpacity: 0});
 		geojson1.addTo(map);
 	});
 	var geojson2 = new L.GeoJSON.AJAX("./data/BeerSheva_2019.geojson");
 	geojson2.on('data:loaded', function(){
+		geojson2.setStyle({color: '#800080',fillOpacity: 0});
 		geojson2.addTo(map);
 	});
 	var geojson3 = new L.GeoJSON.AJAX("./data/HaifaNorth_2019.geojson");
 	geojson3.on('data:loaded', function(){
+		geojson3.setStyle({color: '#008800',fillOpacity: 0});
 		geojson3.addTo(map);
 	});
 	var geojson4 = new L.GeoJSON.AJAX("./data/JlemYosh_2019.geojson");
 	geojson4.on('data:loaded', function(){
+		geojson4.setStyle({color: '#880000',fillOpacity: 0});
 		geojson4.addTo(map);
 	});
 	var geojson5 = new L.GeoJSON.AJAX("./data/NapotMoaza_2021.geojson");
 	geojson5.on('data:loaded', function(){
-		geojson1.setStyle({color: '#000000',fillOpacity: 0});
+		geojson5.setStyle({color: '#000000',fillOpacity: 0});
 		geojson5.addTo(map);
 	});
 	var geojson6 = new L.GeoJSON.AJAX("./data/TelAviv_2019.geojson");
 	geojson6.on('data:loaded', function(){
+		geojson5.setStyle({color: '#000088',fillOpacity: 0});
 		geojson6.addTo(map);
 	});
 	var overlayMaps = {
