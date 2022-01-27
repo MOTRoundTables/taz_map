@@ -46,44 +46,106 @@
 	var baseMaps = {
 		"Mapbox": tiles
 	};
-	var geojson1 = new L.GeoJSON.AJAX("./data/Arzi_2019.geojson");
+	var geojson1 = new L.GeoJSON.AJAX("./data/Arzi_2019.geojson",{
+		style:{color: '#ffaaaa',weight:1,fillOpacity: 0},
+		onEachFeature: function(feature, layer) {
+			if (feature.properties) {
+					var popupcontent = 'מודל:ארצי<br>'+'מספר איזור תנועה:' + feature.properties.TAZ_1250 + ' <br> שם ישוב:'+feature.properties.city_name;
+					layer.bindPopup(popupcontent);
+					}
+			}
+		});
+	geojson1.addTo(map);
+	<!-- geojson1.on('data:loaded', function(){ -->
+		<!-- geojson1.setStyle({color: '#ffaaaa',weight:1,fillOpacity: 0}); -->
+		<!-- geojson1.addTo(map); -->
+	<!-- }); -->
+	var geojson2 = new L.GeoJSON.AJAX("./data/BeerSheva_2019.geojson",{
+		style:{color: '#800080',weight:1,fillOpacity: 0},
+		onEachFeature: function(feature, layer) {
+			if (feature.properties) {
+					var popupcontent = 'מודל:באר שבע<br>'+'מספר איזור תנועה:' + feature.properties.TAZ_BSMA + ' <br> שם ישוב:'+feature.properties.Municipality_Name;
+					layer.bindPopup(popupcontent);
+					}
+			}
+		});
+	geojson2.addTo(map);
+	<!-- var geojson2 = new L.GeoJSON.AJAX("./data/BeerSheva_2019.geojson"); -->
+	<!-- geojson2.on('data:loaded', function(){ -->
+		<!-- geojson2.setStyle({color: '#800080',weight:1,fillOpacity: 0}); -->
+		<!-- geojson2.addTo(map); -->
+	<!-- }); -->
+	var geojson3 = new L.GeoJSON.AJAX("./data/HaifaNorth_2019.geojson",{
+		style:{color: '#008800',weight:1,fillOpacity: 0},
+		onEachFeature: function(feature, layer) {
+			if (feature.properties) {
+					var popupcontent = 'מודל:חיפה<br>'+'מספר איזור תנועה:' + feature.properties.TAZ_NUMBER + ' <br> שם ישוב:'+feature.properties.SZone_name;
+					layer.bindPopup(popupcontent);
+					}
+			}
+		});
+	geojson3.addTo(map);
 	
-	geojson1.on('data:loaded', function(){
-		geojson1.setStyle({color: '#ffaaaa',fillOpacity: 0});
-		geojson1.addTo(map);
-	});
-	var geojson2 = new L.GeoJSON.AJAX("./data/BeerSheva_2019.geojson");
-	geojson2.on('data:loaded', function(){
-		geojson2.setStyle({color: '#800080',fillOpacity: 0});
-		geojson2.addTo(map);
-	});
-	var geojson3 = new L.GeoJSON.AJAX("./data/HaifaNorth_2019.geojson");
-	geojson3.on('data:loaded', function(){
-		geojson3.setStyle({color: '#008800',fillOpacity: 0});
-		geojson3.addTo(map);
-	});
-	var geojson4 = new L.GeoJSON.AJAX("./data/JlemYosh_2019.geojson");
-	geojson4.on('data:loaded', function(){
-		geojson4.setStyle({color: '#880000',fillOpacity: 0});
-		geojson4.addTo(map);
-	});
-	var geojson5 = new L.GeoJSON.AJAX("./data/NapotMoaza_2021.geojson");
-	geojson5.on('data:loaded', function(){
-		geojson5.setStyle({color: '#000000',fillOpacity: 0});
-		geojson5.addTo(map);
-	});
-	var geojson6 = new L.GeoJSON.AJAX("./data/TelAviv_2019.geojson");
-	geojson6.on('data:loaded', function(){
-		geojson5.setStyle({color: '#000088',fillOpacity: 0});
-		geojson6.addTo(map);
-	});
+	<!-- var geojson3 = new L.GeoJSON.AJAX("./data/HaifaNorth_2019.geojson"); -->
+	<!-- geojson3.on('data:loaded', function(){ -->
+		<!-- geojson3.setStyle({color: '#008800',weight:1,fillOpacity: 0}); -->
+		<!-- geojson3.addTo(map); -->
+	<!-- }); -->
+	var geojson4 = new L.GeoJSON.AJAX("./data/JlemYosh_2019.geojson",{
+		style:{color: '#880000',weight:1,fillOpacity: 0},
+		onEachFeature: function(feature, layer) {
+			if (feature.properties) {
+					var popupcontent = 'מודל:ירושלים-יו"ש<br>'+'מספר איזור תנועה:' + feature.properties.TAZ_NUM + ' <br> שם אזור:'+feature.properties.Name_hebre;
+					layer.bindPopup(popupcontent);
+					}
+			}
+		});
+	geojson4.addTo(map);
+	
+	<!-- var geojson4 = new L.GeoJSON.AJAX("./data/JlemYosh_2019.geojson"); -->
+	<!-- geojson4.on('data:loaded', function(){ -->
+		<!-- geojson4.setStyle({color: '#880000',weight:1,fillOpacity: 0}); -->
+		<!-- geojson4.addTo(map); -->
+	<!-- }); -->
+	var geojson5 = new L.GeoJSON.AJAX("./data/NapotMoaza_2021.geojson",{
+		style:{color: '#000000',weight:1,fillOpacity: 0},
+		onEachFeature: function(feature, layer) {
+			if (feature.properties) {
+					var popupcontent = 'שכבת נפות<br>'+'מספר נפה:' + feature.properties.NafaNum + ' <br> שם נפה:'+feature.properties.Nafa;
+					layer.bindPopup(popupcontent);
+					}
+			}
+		});
+	geojson5.addTo(map);
+	
+	<!-- var geojson5 = new L.GeoJSON.AJAX("./data/NapotMoaza_2021.geojson"); -->
+	<!-- geojson5.on('data:loaded', function(){ -->
+		<!-- geojson5.setStyle({color: '#000000',weight:1,fillOpacity: 0}); -->
+		<!-- geojson5.addTo(map); -->
+	<!-- }); -->
+	var geojson6 = new L.GeoJSON.AJAX("./data/TelAviv_2019.geojson",{
+		style:{color: '#8888FF',weight:1,fillOpacity: 0},
+		onEachFeature: function(feature, layer) {
+			if (feature.properties) {
+					var popupcontent = 'מודל:תל אביב<br>'+'מספר איזור תנועה:' + feature.properties.TAZV41 + ' <br> שם ישוב:'+feature.properties.NAME_H;
+					layer.bindPopup(popupcontent);
+					}
+			}
+		});
+	geojson6.addTo(map);
+	
+	<!-- var geojson6 = new L.GeoJSON.AJAX("./data/TelAviv_2019.geojson"); -->
+	<!-- geojson6.on('data:loaded', function(){ -->
+		<!-- geojson5.setStyle({color: '#000088',weight:1,fillOpacity: 0}); -->
+		<!-- geojson6.addTo(map); -->
+	<!-- }); -->
 	var overlayMaps = {
-		"Arzi_2019": geojson1,
-		"BeerSheva_2019":geojson2,
-		"HaifaNorth_2019":geojson3,
-		"JlemYosh_2019":geojson4,
-		"NapotMoaza_2021":geojson5,
-		"TelAviv_2019":geojson6
+		"שכבת מודל ארצי": geojson1,
+		"שכבת מודל באר שבע":geojson2,
+		"שכבת מודל חיפה":geojson3,
+		'שכבת מודל ירושלים - יו"ש':geojson4,
+		"שכבת נפות":geojson5,
+		"שכבת מודל תל אביב":geojson6
 	};
 	L.control.layers(baseMaps,overlayMaps).addTo(map);
 </script>
