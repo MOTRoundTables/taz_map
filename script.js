@@ -13,7 +13,7 @@ var baseMaps = {
 	"Mapbox": tiles
 };
 var geojson1 = new L.GeoJSON.AJAX("./data/Arzi_2019.geojson",{
-	style:{color: '#ffaaaa',weight:1,fillOpacity: 0},
+	style:{color: '#ffaaaa',weight:2,fillOpacity: 0},
 	onEachFeature: function(feature, layer) {
 		if (feature.properties) {
 				var popupcontent = 'מודל:ארצי<br>'+'מספר איזור תנועה:' + feature.properties.TAZ_1250 + ' <br> שם ישוב:'+feature.properties.city_name;
@@ -59,7 +59,7 @@ geojson4.addTo(map);
 
 
 var geojson5 = new L.GeoJSON.AJAX("./data/NapotMoaza_2021.geojson",{
-	style:{color: '#000000',weight:1,fillOpacity: 0},
+	style:{color: '#000000',weight:5,fillOpacity: 0},
 	onEachFeature: function(feature, layer) {
 		if (feature.properties) {
 				var popupcontent = 'שכבת נפות<br>'+'מספר נפה:' + feature.properties.NafaNum + ' <br> שם נפה:'+feature.properties.Nafa;
