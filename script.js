@@ -24,7 +24,7 @@ var baseMaps = {
 
 var geojson1 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/Arzi_2019.geojson",{
 	pane: 'back',
-	style:{color: '#ffaaaa',weight:2,fillOpacity: 0},
+	style:{color: '#ffaaaa',weight:4,fillOpacity: 0},
 	onEachFeature: function(feature, layer) {
 		if (feature.properties) {
 				var popupcontent = 'מודל:ארצי<br>'+'מספר איזור תנועה:' + feature.properties.TAZ_1250 + ' <br> שם ישוב:'+feature.properties.city_name;
