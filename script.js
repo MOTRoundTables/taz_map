@@ -1,5 +1,13 @@
-var map = L.map('map').setView([31.5, 35], 7);
+// Startegic Model TAZ maps
 
+var map = L.map('map').setView([31.5, 35], 7);
+L.Control.boxzoom({ position:'topleft' }).addTo(map);
+map.createPane('back');
+map.getPane('back').style.zIndex = 500;
+map.createPane('other');
+map.getPane('other').style.zIndex = 1000;
+map.createPane('front');
+map.getPane('front').style.zIndex = 1500;
 
 var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 	maxZoom: 18,
@@ -9,10 +17,13 @@ var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
 	tileSize: 512,
 	zoomOffset: -1
 }).addTo(map);
+
 var baseMaps = {
 	"Mapbox": tiles
 };
-var geojson1 = new L.GeoJSON.AJAX("./data/Arzi_2019.geojson",{
+
+var geojson1 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/Arzi_2019.geojson",{
+	pane: 'back',
 	style:{color: '#ffaaaa',weight:2,fillOpacity: 0},
 	onEachFeature: function(feature, layer) {
 		if (feature.properties) {
@@ -21,9 +32,10 @@ var geojson1 = new L.GeoJSON.AJAX("./data/Arzi_2019.geojson",{
 				}
 		}
 	});
-geojson1.addTo(map);
+geojson1.addTo(map); // arzi
 
-var geojson2 = new L.GeoJSON.AJAX("./data/BeerSheva_2019.geojson",{
+var geojson2 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/BeerSheva_2019.geojson",{
+	pane: 'other',
 	style:{color: '#800080',weight:1,fillOpacity: 0},
 	onEachFeature: function(feature, layer) {
 		if (feature.properties) {
@@ -32,9 +44,10 @@ var geojson2 = new L.GeoJSON.AJAX("./data/BeerSheva_2019.geojson",{
 				}
 		}
 	});
-geojson2.addTo(map);
+geojson2.addTo(map); // BeerSheva
 
-var geojson3 = new L.GeoJSON.AJAX("./data/HaifaNorth_2019.geojson",{
+var geojson3 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/HaifaNorth_2019.geojson",{
+	pane: 'other',
 	style:{color: '#008800',weight:1,fillOpacity: 0},
 	onEachFeature: function(feature, layer) {
 		if (feature.properties) {
@@ -43,10 +56,10 @@ var geojson3 = new L.GeoJSON.AJAX("./data/HaifaNorth_2019.geojson",{
 				}
 		}
 	});
-geojson3.addTo(map);
+geojson3.addTo(map); // Haifa
 
-
-var geojson4 = new L.GeoJSON.AJAX("./data/JlemYosh_2019.geojson",{
+var geojson4 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/JlemYosh_2019.geojson",{
+	pane: 'other',
 	style:{color: '#880000',weight:1,fillOpacity: 0},
 	onEachFeature: function(feature, layer) {
 		if (feature.properties) {
@@ -55,10 +68,10 @@ var geojson4 = new L.GeoJSON.AJAX("./data/JlemYosh_2019.geojson",{
 				}
 		}
 	});
-geojson4.addTo(map);
+geojson4.addTo(map); // Jlem
 
-
-var geojson5 = new L.GeoJSON.AJAX("./data/NapotMoaza_2021.geojson",{
+var geojson5 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/NapotMoaza_2021.geojson",{
+	pane: 'front',
 	style:{color: '#000000',weight:5,fillOpacity: 0},
 	onEachFeature: function(feature, layer) {
 		if (feature.properties) {
@@ -67,10 +80,10 @@ var geojson5 = new L.GeoJSON.AJAX("./data/NapotMoaza_2021.geojson",{
 				}
 		}
 	});
-geojson5.addTo(map);
+geojson5.addTo(map); // Napot
 
-
-var geojson6 = new L.GeoJSON.AJAX("./data/TelAviv_2019.geojson",{
+var geojson6 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/TelAviv_2019.geojson",{
+	pane: 'other',
 	style:{color: '#8888FF',weight:1,fillOpacity: 0},
 	onEachFeature: function(feature, layer) {
 		if (feature.properties) {
@@ -79,18 +92,20 @@ var geojson6 = new L.GeoJSON.AJAX("./data/TelAviv_2019.geojson",{
 				}
 		}
 	});
-geojson6.addTo(map);
-
+geojson6.addTo(map); // Tlv
 
 var overlayMaps = {
-	"שכבת מודל ארצי": geojson1,
-	"שכבת מודל באר שבע":geojson2,
 	"שכבת מודל חיפה":geojson3,
+	"שכבת מודל תל אביב":geojson6,
 	'שכבת מודל ירושלים - יו"ש':geojson4,
-	"שכבת נפות":geojson5,
-	"שכבת מודל תל אביב":geojson6
+	"שכבת מודל באר שבע":geojson2,
+	"שכבת מודל ארצי": geojson1,
+	"שכבת נפות":geojson5
 };
-L.control.layers(baseMaps,overlayMaps).addTo(map);
+
+L.control.layers(baseMaps, overlayMaps, {collapsed:false}).addTo(map);
+
+
 
 L.Control.Legend = L.Control.extend({
     onAdd: function(map) {
