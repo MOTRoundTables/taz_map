@@ -114,14 +114,12 @@ L.Control.Legend = L.Control.extend({
         
         L.DomEvent.disableClickPropagation(container);
         L.DomEvent.disableScrollPropagation(container);
-        container.innerHTML += '<i style="background: #ffaaaa"></i> מודל ארצי <br>'
-		container.innerHTML += '<i style="background: #800080"></i> מודל באר שבע <br>'
-		container.innerHTML += '<i style="background: #008800"></i> מודל חיפה <br>'
-		container.innerHTML += '<i style="background: #880000"></i> מודל ירושלים <br>'
-        container.innerHTML += '<i style="background: #000000"></i> נפות <br>'
+	container.innerHTML += '<i style="background: #008800"></i> מודל חיפה <br>'
         container.innerHTML += '<i style="background: #8888FF"></i> מודל תל אביב <br>'
-
-        
+	container.innerHTML += '<i style="background: #880000"></i> מודל ירושלים <br>'
+	container.innerHTML += '<i style="background: #800080"></i> מודל באר שבע <br>'
+        container.innerHTML += '<i style="background: #ffaaaa"></i> מודל ארצי <br>'
+        container.innerHTML += '<i style="background: #000000"></i> נפות <br>'
 
         return container;
     }
