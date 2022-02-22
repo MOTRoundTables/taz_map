@@ -105,26 +105,35 @@ var overlayMaps = {
 
 L.control.layers(baseMaps, overlayMaps, {collapsed:false}).addTo(map);
 
-
+setPopUpZIndex()
 
 L.Control.Legend = L.Control.extend({
-    onAdd: function(map) {
-        let container = L.DomUtil.create('div', 'leaflet-bar control info legend');
-        container.title = "מקרא";
-        
-        L.DomEvent.disableClickPropagation(container);
-        L.DomEvent.disableScrollPropagation(container);
-	container.innerHTML += '<i style="background: #008800"></i> מודל חיפה <br>'
-        container.innerHTML += '<i style="background: #8888FF"></i> מודל תל אביב <br>'
-	container.innerHTML += '<i style="background: #880000"></i> מודל ירושלים <br>'
-	container.innerHTML += '<i style="background: #800080"></i> מודל באר שבע <br>'
-        container.innerHTML += '<i style="background: #ffaaaa"></i> מודל ארצי <br>'
-        container.innerHTML += '<i style="background: #000000"></i> נפות <br>'
+	onAdd: function(map) {
+		let container = L.DomUtil.create('div', 'leaflet-bar control info legend');
+		container.title = "מקרא";
 
-        return container;
-    }
+	L.DomEvent.disableClickPropagation(container);
+	L.DomEvent.disableScrollPropagation(container);
+		container.innerHTML += '<i style="background: #008800"></i> מודל חיפה <br>'
+		container.innerHTML += '<i style="background: #8888FF"></i> מודל תל אביב <br>'
+		container.innerHTML += '<i style="background: #880000"></i> מודל ירושלים <br>'
+		container.innerHTML += '<i style="background: #800080"></i> מודל באר שבע <br>'
+		container.innerHTML += '<i style="background: #ffaaaa"></i> מודל ארצי <br>'
+		container.innerHTML += '<i style="background: #000000"></i> נפות <br>'
+
+	return container;
+	}
 })
+
 L.control.legend = function(opts) {
     return new L.Control.Legend(opts);
 }
 let legendControl = L.control.legend({ position: 'topright' }).addTo(map);
+
+// source: https://gis.stackexchange.com/questions/162709/set-z-index-of-leaflet-popup
+function setPopUpZIndex() {
+	let paneCol = document.getElementsByClassName('leaflet-popup-pane')
+	let paneToChange = paneCol[0];
+	console.log(paneToChange);
+	paneToChange.style.zIndex = 3000;
+}
