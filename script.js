@@ -134,6 +134,6 @@ let legendControl = L.control.legend({ position: 'topright' }).addTo(map);
 function setPopUpZIndex() {
 	let paneCol = document.getElementsByClassName('leaflet-popup-pane')
 	let paneToChange = paneCol[0];
-	console.log(paneToChange);
+	//console.log(paneToChange);
 	paneToChange.style.zIndex = 3000;
 }
