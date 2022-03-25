@@ -96,7 +96,7 @@ var geojson7 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data
 	style:{color: '#00008B', weight:5, fillOpacity: 0},
 	onEachFeature: function(feature, layer) {
 		if (feature.properties) {
-				var popupcontent = 'שכבת נפות<br>'+'מספר גזרה:' + feature.properties.full_code + ' <br> שם נפה:'+feature.properties.full_name;
+				var popupcontent = 'שכבת גזרות<br>'+'מספר גזרה:' + feature.properties.full_code + ' <br> שם גזרה:'+feature.properties.full_name;
 				layer.bindPopup(popupcontent);
 				}
 		}
