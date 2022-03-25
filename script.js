@@ -18,13 +18,10 @@ var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
 	zoomOffset: -1
 }).addTo(map);
 
-var baseMaps = {
-	"Mapbox": tiles
-};
 
 var geojson1 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/Arzi_2019.geojson",{
 	pane: 'back',
-	style:{color: '#ffaaaa',weight:4,fillOpacity: 0},
+	style:{color: '#ffaaaa', weight:4, fillOpacity: 0},
 	onEachFeature: function(feature, layer) {
 		if (feature.properties) {
 				var popupcontent = 'מודל:ארצי<br>'+'מספר איזור תנועה:' + feature.properties.TAZ_1250 + ' <br> שם ישוב:'+feature.properties.city_name;
@@ -36,7 +33,7 @@ geojson1.addTo(map); // arzi
 
 var geojson2 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/BeerSheva_2019.geojson",{
 	pane: 'other',
-	style:{color: '#800080',weight:1,fillOpacity: 0},
+	style:{color: '#800080', weight:1, fillOpacity: 0},
 	onEachFeature: function(feature, layer) {
 		if (feature.properties) {
 				var popupcontent = 'מודל:באר שבע<br>'+'מספר איזור תנועה:' + feature.properties.TAZ_BSMA + ' <br> שם ישוב:'+feature.properties.Municipality_Name;
@@ -48,7 +45,7 @@ geojson2.addTo(map); // BeerSheva
 
 var geojson3 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/HaifaNorth_2019.geojson",{
 	pane: 'other',
-	style:{color: '#008800',weight:1,fillOpacity: 0},
+	style:{color: '#008800', weight:1, fillOpacity: 0},
 	onEachFeature: function(feature, layer) {
 		if (feature.properties) {
 				var popupcontent = 'מודל:חיפה<br>'+'מספר איזור תנועה:' + feature.properties.TAZ_NUMBER + ' <br> שם ישוב:'+feature.properties.SZone_name;
@@ -60,7 +57,7 @@ geojson3.addTo(map); // Haifa
 
 var geojson4 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/JlemYosh_2019.geojson",{
 	pane: 'other',
-	style:{color: '#880000',weight:1,fillOpacity: 0},
+	style:{color: '#880000', weight:1, fillOpacity: 0},
 	onEachFeature: function(feature, layer) {
 		if (feature.properties) {
 				var popupcontent = 'מודל:ירושלים-יו"ש<br>'+'מספר איזור תנועה:' + feature.properties.TAZ_NUM + ' <br> שם אזור:'+feature.properties.Name_hebre;
@@ -70,21 +67,9 @@ var geojson4 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data
 	});
 geojson4.addTo(map); // Jlem
 
-var geojson5 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/NapotMoaza_2021.geojson",{
-	pane: 'front',
-	style:{color: '#000000',weight:5,fillOpacity: 0},
-	onEachFeature: function(feature, layer) {
-		if (feature.properties) {
-				var popupcontent = 'שכבת נפות<br>'+'מספר נפה:' + feature.properties.NafaNum + ' <br> שם נפה:'+feature.properties.Nafa;
-				layer.bindPopup(popupcontent);
-				}
-		}
-	});
-geojson5.addTo(map); // Napot
-
-var geojson6 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/TelAviv_2019.geojson",{
+var geojson5 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/TelAviv_2019.geojson",{
 	pane: 'other',
-	style:{color: '#8888FF',weight:1,fillOpacity: 0},
+	style:{color: '#8888FF', weight:1, fillOpacity: 0},
 	onEachFeature: function(feature, layer) {
 		if (feature.properties) {
 				var popupcontent = 'מודל:תל אביב<br>'+'מספר איזור תנועה:' + feature.properties.TAZV41 + ' <br> שם ישוב:'+feature.properties.NAME_H;
@@ -92,18 +77,60 @@ var geojson6 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data
 				}
 		}
 	});
-geojson6.addTo(map); // Tlv
+geojson5.addTo(map); // Tlv
 
-var overlayMaps = {
+var geojson6 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/NapotMoaza_2021.geojson",{
+	pane: 'front',
+	style:{color: '#000000', weight:5, fillOpacity: 0},
+	onEachFeature: function(feature, layer) {
+		if (feature.properties) {
+				var popupcontent = 'שכבת נפות<br>'+'מספר נפה:' + feature.properties.NafaNum + ' <br> שם נפה:'+feature.properties.Nafa;
+				layer.bindPopup(popupcontent);
+				}
+		}
+	});
+geojson6.addTo(map); // Napot
+
+var geojson7 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/metropolin_rings_2008.geoJson",{
+	pane: 'front',
+	style:{color: '#00008B', weight:5, fillOpacity: 0},
+	onEachFeature: function(feature, layer) {
+		if (feature.properties) {
+				var popupcontent = 'שכבת נפות<br>'+'מספר גזרה:' + feature.properties.full_code + ' <br> שם נפה:'+feature.properties.full_name;
+				layer.bindPopup(popupcontent);
+				}
+		}
+	});
+// geojson7.addTo(map); // Napot
+
+// Overlay layers are grouped
+var groupedOverlays = {
+  "מודלים": {
 	"שכבת מודל חיפה":geojson3,
-	"שכבת מודל תל אביב":geojson6,
+	"שכבת מודל תל אביב":geojson5,
 	'שכבת מודל ירושלים - יו"ש':geojson4,
 	"שכבת מודל באר שבע":geojson2,
 	"שכבת מודל ארצי": geojson1,
-	"שכבת נפות":geojson5
+  },
+  "שכבות אחרות": {
+	"שכבת נפות":geojson6, 
+	"גזרות מטרופולין":geojson7
+  }
 };
 
-L.control.layers(baseMaps, overlayMaps, {collapsed:false}).addTo(map);
+
+var baseMaps = {
+	"Mapbox": tiles
+};
+
+var options = {
+  collapsed:false // ,
+  // exclusiveGroups: ["Landmarks"],  // Make the "Landmarks" group exclusive (use radio inputs)
+  // groupCheckboxes: true  // Show a checkbox next to non-exclusive group labels for toggling all
+};
+
+var layerControl = L.control.groupedLayers(baseMaps, groupedOverlays, options);
+map.addControl(layerControl);
 
 setPopUpZIndex()
 
@@ -120,6 +147,7 @@ L.Control.Legend = L.Control.extend({
 		container.innerHTML += '<i style="background: #800080"></i> מודל באר שבע <br>'
 		container.innerHTML += '<i style="background: #ffaaaa"></i> מודל ארצי <br>'
 		container.innerHTML += '<i style="background: #000000"></i> נפות <br>'
+		container.innerHTML += '<i style="background: #00008B"></i> גזרות <br>'
 
 	return container;
 	}
