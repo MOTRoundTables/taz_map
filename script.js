@@ -103,17 +103,46 @@ var geojson7 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data
 	});
 // geojson7.addTo(map); // Napot
 
+var geojson8 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/stat2011_simp.geoJson",{
+	pane: 'front',
+	style:{color: '#eea6f7', weight:2, fillOpacity: 0},
+	onEachFeature: function(feature, layer) {
+		if (feature.properties) {
+				var popupcontent = 'אזורים סטטיסטיים 2011<br>'+'סמל ישוב:' + feature.properties.SEMEL_YISH +' מספר א"ס:' + feature.properties.STAT11 + ' <br> שם יישוב:'+feature.properties.SHEM_YISHU;
+				layer.bindPopup(popupcontent);
+				}
+		}
+	});
+// geojson8.addTo(map); // Napot
+
+var geojson9 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/stat2022_simp.geoJson",{
+	pane: 'front',
+	style:{color: '#0003ba', weight:1, fillOpacity: 0},
+	onEachFeature: function(feature, layer) {
+		if (feature.properties) {
+				var popupcontent = 'אזורים סטטיסטיים 2022<br>'+'סמל ישוב:' + feature.properties.SEMEL_YISH +' מספר א"ס:' + feature.properties.STAT_2022 + ' <br> שם יישוב:'+feature.properties.SHEM_YISHU;
+				layer.bindPopup(popupcontent);
+				}
+		}
+	});
+// geojson9.addTo(map); // Napot
+
+
 // Overlay layers are grouped
 var groupedOverlays = {
-  "מודלים": {
-	"שכבת מודל חיפה":geojson3,
-	"שכבת מודל תל אביב":geojson5,
-	'שכבת מודל ירושלים - יו"ש':geojson4,
-	"שכבת מודל באר שבע":geojson2,
-	"שכבת מודל ארצי": geojson1,
+  "אזורי תנועה מודלים": {
+	"מודל חיפה":geojson3,
+	"מודל תל אביב":geojson5,
+	'מודל ירושלים - יו"ש':geojson4,
+	"מודל באר שבע":geojson2,
+	"מודל ארצי": geojson1,
+  },
+  "אזורים סטטיסטיים": {
+	"2011":geojson8, 
+	"2022":geojson9
   },
   "שכבות אחרות": {
-	"שכבת נפות":geojson6, 
+	"נפות":geojson6, 
 	"גזרות מטרופולין":geojson7
   }
 };
@@ -124,9 +153,9 @@ var baseMaps = {
 };
 
 var options = {
-  collapsed:false // ,
+  collapsed:false,
   // exclusiveGroups: ["Landmarks"],  // Make the "Landmarks" group exclusive (use radio inputs)
-  // groupCheckboxes: true  // Show a checkbox next to non-exclusive group labels for toggling all
+  groupCheckboxes: true  // Show a checkbox next to non-exclusive group labels for toggling all
 };
 
 var layerControl = L.control.groupedLayers(baseMaps, groupedOverlays, options);
@@ -139,15 +168,17 @@ L.Control.Legend = L.Control.extend({
 		let container = L.DomUtil.create('div', 'leaflet-bar control info legend');
 		container.title = "מקרא";
 
-	L.DomEvent.disableClickPropagation(container);
+ 	L.DomEvent.disableClickPropagation(container);
 	L.DomEvent.disableScrollPropagation(container);
-		container.innerHTML += '<i style="background: #008800"></i> מודל חיפה <br>'
-		container.innerHTML += '<i style="background: #8888FF"></i> מודל תל אביב <br>'
-		container.innerHTML += '<i style="background: #880000"></i> מודל ירושלים <br>'
-		container.innerHTML += '<i style="background: #800080"></i> מודל באר שבע <br>'
-		container.innerHTML += '<i style="background: #ffaaaa"></i> מודל ארצי <br>'
+		container.innerHTML += '<i style="background: #008800"></i> מודל חיפה - גרסה <br>'
+		container.innerHTML += '<i style="background: #8888FF"></i> מודל תל אביב - גרסה 4.2 <br>'
+		container.innerHTML += '<i style="background: #880000"></i> מודל ירושלים - גרסה 3.2<br>'
+		container.innerHTML += '<i style="background: #800080"></i> מודל באר שבע - גרסה <br>'
+		container.innerHTML += '<i style="background: #ffaaaa"></i> מודל ארצי - גרסה <br>'
 		container.innerHTML += '<i style="background: #000000"></i> נפות <br>'
 		container.innerHTML += '<i style="background: #00008B"></i> גזרות <br>'
+		container.innerHTML += '<i style="background: #eea6f7"></i> א"ס 2011 <br>'
+		container.innerHTML += '<i style="background: #0003ba"></i> א"ס 2022 <br>'
 
 	return container;
 	}
