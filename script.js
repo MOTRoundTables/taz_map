@@ -91,7 +91,7 @@ var geojson6 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data
 	});
 geojson6.addTo(map); // Napot
 
-var geojson7 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/metropolin_rings_2008.geoJson",{
+var geojson7 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/metropolin_rings_2008.geojson",{
 	pane: 'front',
 	style:{color: '#00008B', weight:5, fillOpacity: 0},
 	onEachFeature: function(feature, layer) {
@@ -103,7 +103,7 @@ var geojson7 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data
 	});
 // geojson7.addTo(map); // Napot
 
-var geojson8 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/stat2011_simp.geoJson",{
+var geojson8 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/stat2011_simp.geojson",{
 	pane: 'front',
 	style:{color: '#eea6f7', weight:2, fillOpacity: 0},
 	onEachFeature: function(feature, layer) {
@@ -115,7 +115,7 @@ var geojson8 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data
 	});
 // geojson8.addTo(map); // Napot
 
-var geojson9 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/stat2022_simp.geoJson",{
+var geojson9 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/stat2022_simp.geojson",{
 	pane: 'front',
 	style:{color: '#0003ba', weight:1, fillOpacity: 0},
 	onEachFeature: function(feature, layer) {
