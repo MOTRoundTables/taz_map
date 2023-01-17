@@ -4,6 +4,8 @@ var map = L.map('map').setView([31.5, 35], 7);
 L.Control.boxzoom({ position:'topleft' }).addTo(map);
 map.createPane('back');
 map.getPane('back').style.zIndex = 500;
+map.createPane('back2');
+map.getPane('back2').style.zIndex = 750;
 map.createPane('other');
 map.getPane('other').style.zIndex = 1000;
 map.createPane('front');
@@ -104,8 +106,8 @@ var geojson7 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data
 // geojson7.addTo(map); // Napot
 
 var geojson8 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/stat2011_simp.geojson",{
-	pane: 'front',
-	style:{color: '#eea6f7', weight:2, fillOpacity: 0},
+	pane: 'back2',
+	style:{color: '#eea6f7', weight:3, fillOpacity: 0},
 	onEachFeature: function(feature, layer) {
 		if (feature.properties) {
 				var popupcontent = 'אזורים סטטיסטיים 2011<br>'+'סמל ישוב:' + feature.properties.SEMEL_YISH +' מספר א"ס:' + feature.properties.STAT11 + ' <br> שם יישוב:'+feature.properties.SHEM_YISHU;
@@ -116,8 +118,8 @@ var geojson8 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data
 // geojson8.addTo(map); // Napot
 
 var geojson9 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/stat2022_simp.geojson",{
-	pane: 'front',
-	style:{color: '#0003ba', weight:1, fillOpacity: 0},
+	pane: 'back2',
+	style:{color: '#FFB6C1', weight:3, fillOpacity: 0},
 	onEachFeature: function(feature, layer) {
 		if (feature.properties) {
 				var popupcontent = 'אזורים סטטיסטיים 2022<br>'+'סמל ישוב:' + feature.properties.SEMEL_YISH +' מספר א"ס:' + feature.properties.STAT_2022 + ' <br> שם יישוב:'+feature.properties.SHEM_YISHU;
