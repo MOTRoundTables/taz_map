@@ -200,7 +200,7 @@ L.Control.Legend = L.Control.extend({
 		container.innerHTML += '<i style="background: #000000"></i> נפות <br>'
 		container.innerHTML += '<i style="background: #00008B"></i> גזרות <br>'
 		container.innerHTML += '<i style="background: #eea6f7"></i> א"ס 2011 <br>'
-		container.innerHTML += '<i style="background: #0003ba"></i> א"ס 2022 <br>'
+		container.innerHTML += '<i style="background: #FFB6C1"></i> א"ס 2022 <br>'
 
 	return container;
 	}
