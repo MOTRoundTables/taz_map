@@ -42,7 +42,7 @@ aerial = Esri_WorldImagery;
 
 var geojson1 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/Arzi_2019.geojson",{
 	pane: 'back',
-	style:{color: '#ffaaaa', weight:4, fillOpacity: 0},
+	style:{color: '#ffaaaa', weight:7, fillOpacity: 0},
 	onEachFeature: function(feature, layer) {
 		if (feature.properties) {
 				var popupcontent = 'מודל:ארצי<br>'+'מספר איזור תנועה:' + feature.properties.TAZ_1250 + ' <br> שם ישוב:'+feature.properties.city_name;
@@ -126,7 +126,7 @@ var geojson7 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data
 
 var geojson8 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/stat2011_simp.geojson",{
 	pane: 'back2',
-	style:{color: '#eea6f7', weight:3, fillOpacity: 0},
+	style:{color: '#eea6f7', weight:1.5, fillOpacity: 0},
 	onEachFeature: function(feature, layer) {
 		if (feature.properties) {
 				var popupcontent = 'אזורים סטטיסטיים 2011<br>'+'סמל ישוב:' + feature.properties.SEMEL_YISH +' מספר א"ס:' + feature.properties.STAT11 + ' <br> שם יישוב:'+feature.properties.SHEM_YISHU;
@@ -138,7 +138,7 @@ var geojson8 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data
 
 var geojson9 = new L.GeoJSON.AJAX("https://motroundtables.github.io/taz_map/data/stat2022_simp.geojson",{
 	pane: 'back2',
-	style:{color: '#FFB6C1', weight:3, fillOpacity: 0},
+	style:{color: '#9932CC', weight:5, fillOpacity: 0},
 	onEachFeature: function(feature, layer) {
 		if (feature.properties) {
 				var popupcontent = 'אזורים סטטיסטיים 2022<br>'+'סמל ישוב:' + feature.properties.SEMEL_YISH +' מספר א"ס:' + feature.properties.STAT_2022 + ' <br> שם יישוב:'+feature.properties.SHEM_YISHU;
@@ -200,7 +200,7 @@ L.Control.Legend = L.Control.extend({
 		container.innerHTML += '<i style="background: #000000"></i> נפות <br>'
 		container.innerHTML += '<i style="background: #00008B"></i> גזרות <br>'
 		container.innerHTML += '<i style="background: #eea6f7"></i> א"ס 2011 <br>'
-		container.innerHTML += '<i style="background: #FFB6C1"></i> א"ס 2022 <br>'
+		container.innerHTML += '<i style="background: #9932CC"></i> א"ס 2022 <br>'
 
 	return container;
 	}
