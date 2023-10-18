@@ -1,0 +1,648 @@
+{
+  "Author": "משרד התחבורה",
+  "Publisher": "משרד התחבורה",
+  "Contact": "עדו קליין",
+  "Contact Email": "idshklein@gmail.com",
+  "Title": "התכנית האסטרטגית לדרכים 2030-2050, שלב ב'",
+  "Description": ["חבילת קבצים המכילה את רשת הדרכים מדרג אזורי ומעלה בישראל, בשנים 2030 ו2050, את הפרויקטים המתוכננים ברשת לשנת 2030 ברמת מקטעים ומחלפים, ולשנת 2050 ברמת מקטעים.", "חבילה זו נוצרה במטרה לפרט את המצב התכנוני של רשת הדרכים ברמה האסטרטגית  לשנות יעד עתידיות, לטובת שימוש המתכננים."],
+  "Created": "05/09/2023",
+  "Version": "0.2",
+  "Last updated": "28/09/2023",
+  "Temporal coverage": "מכיל התייחסות לשנות היעד 2030 ו2050",
+  "Dataset file": "st_net_proj_2030_2050.zip",
+  "Metadata creator": "עדו קליין",
+  "Metadata creation date": "05/09/2023",
+  "Comments": ["רשימת הפרויקטים ל2030 מכילה פרויקטים אורכיים ונקודתיים ברשת הדרכים .", "פרויקטים אורכיים הם פרויקטיים המתבצעים לאורך מקטע, ומהותם היא שינוי המקטע ברשת.", "בניגוד אליהם, פרויקטים נקודתיים הם פרויקטים של מחלפים המבוצעים בפני עצמם, במסגרת חיבור מקטעים ברשת.מדובר בצמתים או מחלפים.", "עבור שנת 2050 לא קיימת רשימה של פרויקטים נקודתיים"],
+  "Keywords": "inter-urban,roads,roads map,interurban roads,freeways,interchanges,mileposts,project inventory,master plan,national",
+  "Frequency of update": "המאגר מתעדכן בתדירות לא קבועה",
+  "Spatial coverage": "ארצי",
+  "Data quality": "מבוסס רשת בסיס 2020. מבוסס על סנכרון חד פעמי שהתקיים ב2023",
+  "Files list": ["projline2030.shp", "projnode2030.shp", "proj2050.shp", "rdsST2030.shp", "rdsST2050.shp", "projbuilt.shp", "projlist.xlsx"],
+  "Files": [
+    {
+      "File name": "projline2030.shp",
+      "File format": "shp",
+      "File description": "רשימת הפרויקטים האורכיים במסגרת התכנית האסטרטגית המיועדת ל2030",
+      "File Comments": "רזולוצית הפרויקט מוגדרת על פי הגדרות של אגף תקציבי פיתוח. בשלב זה מותרת הגדרת הפרויקט כmultilinestring.",
+      "File spatial coverage": "ארצי",
+      "Spatial reference system": "epsg:2039",
+      "File fields": [
+        {
+          "name": "prj_ID",
+          "type": "Integer",
+          "description": "מזהה פרויקט",
+          "comment": "מתחבר למזהים שנקבעו על ידי אגף תקציבי פיתוח"
+        },
+        {
+          "name": "district",
+          "type": "Integer",
+          "description": "קוד מחוז",
+          "vals": {
+            "1": "צפון",
+            "2": "מרכז",
+            "3": "דרום",
+            "4": "יו\"ש"
+          }
+        },
+        {
+          "name": "prj_nm",
+          "type": "Character",
+          "description": "שם הפרויקט"
+        },
+        {
+          "name": "road",
+          "type": "Character",
+          "description": "מספר הכביש בו מתבצע הפרויקט"
+        },
+        {
+          "name": "frmKm",
+          "type": "Character",
+          "description": "אבן הק\"מ בו המקטע של הפרויקט מתחיל",
+          "comment": "במידה ואבן הק\"מ נמצאת על כביש אחר, הערך יהיה: (מספר הכביש האחר) - (מספר אבן הק\"מ)"
+        },
+        {
+          "name": "toKm",
+          "type": "Character",
+          "description": "אבן הק\"מ בו המקטע של הפרויקט מסתיים",
+          "comment": "במידה ואבן הק\"מ נמצאת על כביש אחר, הערך יהיה: (מספר הכביש האחר) - (מספר אבן הק\"מ)"
+        },
+        {
+          "name": "strt",
+          "type": "Character",
+          "description": "שם המקום בו המקטע של הפרויקט מתחיל",
+          "comment": "לרוב שם המקום יהיה צומת, אך גם שימוש באבן ק\"מ אפשרי"
+        },
+        {
+          "name": "fnsh",
+          "type": "Character",
+          "description": "שם המקום בו המקטע של הפרויקט מסתיים",
+          "comment": "לרוב שם המקום יהיה צומת, אך גם שימוש באבן ק\"מ אפשרי"
+        },
+        {
+          "name": "acta",
+          "type": "Integer",
+          "description": "קוד סוג הפעולה המבוצעת",
+          "vals": {
+            "1": "הקמה",
+            "2": "הרחבה",
+            "3": "שדרוג",
+            "4": "שינוי"
+          }
+        },
+        {
+          "name": "prj_class",
+          "type": "Character",
+          "description": "קוד היררכית מקטע הדרך",
+          "vals": {
+            "1": "דרך מהירה",
+            "2": "דרך ראשית ממוחלפת",
+            "3": "דרך ראשית",
+            "4": "דרך אזורית",
+            "5": "עורק עירוני"
+          }
+        },
+        {
+          "name": "prj_len",
+          "type": "real",
+          "description": "אורך מקטע הפרויקט"
+        },
+        {
+          "name": "prj_lns",
+          "type": "integer",
+          "description": "כמות נתיבים כוללת בפרויקט"
+        },
+        {
+          "name": "prf_p",
+          "type": "Integer",
+          "description": "קוד סוג ההעדפה",
+          "vals": {
+            "0": "ללא העדפה",
+            "0.5": "שותצ",
+            "1": "נתיב העדפה בזכות הדרך (נתצ/נרת)"
+          }
+        },
+        {
+          "name": "prj_s",
+          "type": "Character",
+          "description": "סטטוס הפרויקט"
+        },
+        {
+          "name": "agency",
+          "type": "Character",
+          "description": "התאגיד האחראי על הפרויקט"
+        },
+        {
+          "name": "aimyear",
+          "type": "Character",
+          "description": "שנת היעד של הפרויקט",
+          "comment": "יכול להכיל ערכים חסרים במקרה של אי ודאות"
+        },
+        {
+          "name": "fid",
+          "type": "Integer",
+          "description": "מזהה פרויקט רץ"
+        }
+      ]
+    },
+    {
+      "File name": "projnode2030.shp",
+      "File format": "shp",
+      "File description": "רשימת הפרויקטים הנקודתיים במסגרת התכנית האסטרטגית המיועדת ל2030",
+      "File Comments": "רזולוצית הפרויקט מוגדרת על פי הגדרות של אגף תקציבי פיתוח",
+      "File spatial coverage": "ארצי",
+      "Spatial reference system": "epsg:2039",
+      "File fields": [
+        {
+          "name": "prj_ID",
+          "type": "Integer",
+          "description": "מזהה פרויקט",
+          "comment": "מתחבר למזהים שנקבעו על ידי אגף תקציבי פיתוח"
+        },
+        {
+          "name": "district",
+          "type": "Integer",
+          "description": "קוד מחוז",
+          "vals": {
+            "1": "צפון",
+            "2": "מרכז",
+            "3": "דרום",
+            "4": "יו\"ש"
+          }
+        },
+        {
+          "name": "prj_nm",
+          "type": "Character",
+          "description": "שם הפרויקט"
+        },
+        {
+          "name": "rd_1",
+          "type": "Character",
+          "description": "שם הכביש המרכזי ביותר של הפרויקט הנקודתי"
+        },
+        {
+          "name": "rd_2",
+          "type": "Character",
+          "description": "שם הכביש  השני במרכזיותו של הפרויקט הנקודתי"
+        },
+        {
+          "name": "rd_3",
+          "type": "Character",
+          "description": "שם הכביש  השלישי במרכזיותו של הפרויקט הנקודתי"
+        },
+        {
+          "name": "acta",
+          "type": "Integer",
+          "description": "קוד סוג הפעולה המבוצעת",
+          "vals": {
+            "1": "הקמה",
+            "3": "שדרוג"
+          }
+        },
+        {
+          "name": "prj_class",
+          "type": "Character",
+          "description": "קוד היררכית הפרויקט הנקודתי",
+          "vals": {
+            "1": "מערכתי",
+            "2": "ראשי",
+            "3": "אזורי",
+            "4": "מקומי"
+          }
+        },
+        {
+          "name": "prj_s",
+          "type": "Character",
+          "description": "סטטוס הפרויקט"
+        },
+        {
+          "name": "agency",
+          "type": "Character",
+          "description": "התאגיד האחראי על הפרויקט"
+        },
+        {
+          "name": "aimyear",
+          "type": "Character",
+          "description": "שנת היעד של הפרויקט",
+          "comment": "יכול להכיל ערכים חסרים במקרה של אי ודאות"
+        },
+        {
+          "name": "fid",
+          "type": "Integer",
+          "description": "מזהה פרויקט רץ"
+        }
+      ]
+    },
+    {
+      "File name": "proj2050.shp",
+      "File format": "shp",
+      "File description": "רשימת הפרויקטים האורכיים במסגרת התכנית האסטרטגית המיועדת ל2050",
+      "File Comments": "רזולוצית הפרויקט מוגדרת על פי הגדרות של אגף תקציבי פיתוח. בשלב זה מותרת הגדרת הפרויקט כmultilinestring.",
+      "File spatial coverage": "ארצי",
+      "Spatial reference system": "epsg:2039",
+      "File fields": [
+        {
+          "name": "prj_ID",
+          "type": "Integer",
+          "description": "מזהה פרויקט"
+        },
+        {
+          "name": "district",
+          "type": "Integer",
+          "description": "קוד מחוז",
+          "vals": {
+            "1": "צפון",
+            "2": "מרכז",
+            "3": "דרום",
+            "4": "יו\"ש"
+          }
+        },
+        {
+          "name": "prj_nm",
+          "type": "Character",
+          "description": "שם הפרויקט"
+        },
+        {
+          "name": "road",
+          "type": "Character",
+          "description": "מספר הכביש בו מתבצע הפרויקט"
+        },
+        {
+          "name": "acta",
+          "type": "Integer",
+          "description": "קוד סוג הפעולה המבוצעת",
+          "vals": {
+            "1": "הקמה",
+            "2": "הרחבה",
+            "3": "שדרוג",
+            "4": "שינוי"
+          }
+        },
+        {
+          "name": "prj_class",
+          "type": "integer",
+          "description": "קוד היררכית מקטע הדרך",
+          "vals": {
+            "1": "דרך מהירה",
+            "2": "דרך ראשית ממוחלפת",
+            "3": "דרך ראשית",
+            "4": "דרך אזורית",
+            "5": "עורק עירוני"
+          }
+        },
+        {
+          "name": "prj_len",
+          "type": "real",
+          "description": "אורך מקטע הפרויקט"
+        },
+        {
+          "name": "prj_lns",
+          "type": "integer",
+          "description": "כמות נתיבים כוללת בפרויקט"
+        },
+        {
+          "name": "prf_p",
+          "type": "Integer",
+          "description": "קוד סוג ההעדפה",
+          "vals": {
+            "0": "ללא העדפה",
+            "0.5": "שותצ",
+            "1": "נתיב העדפה בזכות הדרך (נתצ/נרת)"
+          }
+        },
+        {
+          "name": "fid",
+          "type": "Integer",
+          "description": "מזהה פרויקט רץ"
+        }
+      ]
+    },
+    {
+      "File name": "rdsST2030.shp",
+      "File format": "shp",
+      "File description": "רשת הדרכים הארצית לשנת 2030",
+      "File spatial coverage": "ארצי",
+      "Spatial reference system": "epsg:2039",
+      "File fields": [
+        {
+          "name": "FID",
+          "type": "Integer",
+          "description": "מזהה",
+          "comment": "ייחודי"
+        },
+        {
+          "name": "ROADNUMBER",
+          "type": "Integer",
+          "description": "מספר הדרך"
+        },
+        {
+          "name": "DISTRICT_N",
+          "type": "Integer",
+          "description": "מחוז",
+          "vals": {
+            "1": "ירושלים",
+            "2": "צפון",
+            "3": "חיפה",
+            "4": "מרכז",
+            "5": "תל אביב",
+            "6": "דרום",
+            "7": "יו\"ש"
+          }
+        },
+        {
+          "name": "LEVEL_30N",
+          "type": "Integer",
+          "description": "סוג קטע",
+          "vals": {
+            "1": "מהירה",
+            "2": "ראשית ממוחלפת",
+            "3": "ראשית",
+            "4": "אזורית"
+          }
+        },
+        {
+          "name": "TOTL_30",
+          "type": "Integer",
+          "description": "מספר נתיבים כולל"
+        },
+        {
+          "name": "NUMLANE_30",
+          "type": "Integer",
+          "description": "מספר נתיבים  לא מיוחדים",
+          "comment": "לא כולל נתיבי העדפה (נר\"ת)"
+        },
+        {
+          "name": "PTL_30_N",
+          "type": "Real",
+          "description": "קוד סוג ההעדפה",
+          "vals": {
+            "0": "ללא נתיב העדפה",
+            "0.5": "שותצ",
+            "1": "עם נתיב העדפה (נרת/נתצ)"
+          }
+        },
+        {
+          "name": "TOLL_30N",
+          "type": "Integer",
+          "description": "קוד אגרה",
+          "vals": {
+            "0": "ללא אגרה",
+            "1": "עם אגרה"
+          }
+        },
+        {
+          "name": "MAKAT_NEW",
+          "type": "Integer",
+          "description": "מזהה פרויקט",
+          "comment": "חיבור למזהה פרויקט שניתן על ידי אגף תקציבי פיתוח. אם 0 - ללא פרויקט."
+        }
+      ]
+    },
+    {
+      "File name": "rdsST2050.shp",
+      "File format": "shp",
+      "File description": "רשת הדרכים הארצית לשנת 2050, ברזוצולציה של מקטעים בין צמתים",
+      "File spatial coverage": "ארצי",
+      "Spatial reference system": "epsg:2039",
+      "File fields": [
+        {
+          "name": "FID",
+          "type": "Integer",
+          "description": "מזהה",
+          "comment": "ייחודי"
+        },
+        {
+          "name": "ROADNUMBER",
+          "type": "Integer",
+          "description": "מספר הדרך"
+        },
+        {
+          "name": "DISTRICT_N",
+          "type": "Integer",
+          "description": "מחוז",
+          "vals": {
+            "1": "ירושלים",
+            "2": "צפון",
+            "3": "חיפה",
+            "4": "מרכז",
+            "5": "תל אביב",
+            "6": "דרום",
+            "7": "יו\"ש"
+          }
+        },
+        {
+          "name": "LEVEL_50N",
+          "type": "Integer",
+          "description": "סוג קטע",
+          "vals": {
+            "1": "מהירה",
+            "2": "ראשית ממוחלפת",
+            "3": "ראשית",
+            "4": "אזורית"
+          }
+        },
+        {
+          "name": "TOTL_50",
+          "type": "Integer",
+          "description": "מספר נתיבים כולל"
+        },
+        {
+          "name": "NUMLANE_50",
+          "type": "Integer",
+          "description": "מספר נתיבים  לא מיוחדים",
+          "comment": "לא כולל נתיבי העדפה (נר\"ת)"
+        },
+        {
+          "name": "PTL_50_N",
+          "type": "Real",
+          "description": "קוד סוג ההעדפה",
+          "vals": {
+            "0": "ללא נתיב העדפה",
+            "0.5": "שותצ",
+            "1": "עם נתיב העדפה (נרת/נתצ)"
+          }
+        },
+        {
+          "name": "TOLL_50N",
+          "type": "Integer",
+          "description": "קוד אגרה",
+          "vals": {
+            "0": "ללא אגרה",
+            "1": "עם אגרה"
+          }
+        },
+        {
+          "name": "project",
+          "type": "Integer",
+          "description": null,
+          "vals": {
+            "0": "ללא פרויקט",
+            "1": "קטע עם פרויקט 2050",
+            "3": null
+          }
+        }
+      ]
+    },
+    {
+      "File name": "projbuilt.shp",
+      "File format": "shp",
+      "File description": "רשימת הפרויקטים שנפתחו לתנועה בין 1.1.2020 ו1.9.2023",
+      "File spatial coverage": "ארצי",
+      "Spatial reference system": "epsg:2039",
+      "File fields": [
+        {
+          "name": "fid",
+          "type": "Integer",
+          "description": "מזהה פרויקט רץ"
+        },
+        {
+          "name": "prj_nm",
+          "type": "Character",
+          "description": "שם הפרויקט"
+        },
+        {
+          "name": "road",
+          "type": "Character",
+          "description": "מספר הכביש בו מתבצע הפרויקט"
+        },
+        {
+          "name": "acta",
+          "type": "Integer",
+          "description": "קוד סוג הפעולה המבוצעת"
+        },
+        {
+          "name": "prj_class",
+          "type": "Character",
+          "description": "קוד היררכית מקטע הדרך"
+        },
+        {
+          "name": "prj_lns",
+          "type": "integer",
+          "description": "כמות נתיבים כוללת בפרויקט"
+        },
+        {
+          "name": "inter",
+          "type": "Character",
+          "description": "האם מדובר במחלף"
+        }
+      ]
+    },
+    {
+      "File name": "projlist.xlsx",
+      "File format": "shp",
+      "File description": "רשימת הפרויקטים האורכיים במסגרת התכנית האסטרטגית המיועדת ל2050",
+      "File spatial coverage": "ארצי",
+      "File fields": [
+        {
+          "name": "מק\"ט",
+          "type": "Integer",
+          "description": null
+        },
+        {
+          "name": "מחוז",
+          "type": "Integer",
+          "description": "קוד מחוז",
+          "vals": {
+            "1": "צפון",
+            "2": "מרכז",
+            "3": "דרום",
+            "4": "יו\"ש"
+          }
+        },
+        {
+          "name": "שם פרויקט",
+          "type": "Character",
+          "description": "שם הפרויקט"
+        },
+        {
+          "name": "מס' דרך",
+          "type": "Character",
+          "description": "מספר הכביש בו מתבצע הפרויקט"
+        },
+        {
+          "name": "מק\"מ",
+          "type": "Character",
+          "description": "אבן הק\"מ בו המקטע של הפרויקט מתחיל",
+          "comment": "במידה ואבן הק\"מ נמצאת על כביש אחר, הערך יהיה: (מספר הכביש האחר) - (מספר אבן הק\"מ)"
+        },
+        {
+          "name": "עד ק\"מ",
+          "type": "Character",
+          "description": "אבן הק\"מ בו המקטע של הפרויקט מסתיים",
+          "comment": "במידה ואבן הק\"מ נמצאת על כביש אחר, הערך יהיה: (מספר הכביש האחר) - (מספר אבן הק\"מ)"
+        },
+        {
+          "name": "התחלה",
+          "type": "Character",
+          "description": "שם המקום בו המקטע של הפרויקט מתחיל",
+          "comment": "לרוב שם המקום יהיה צומת, אך גם שימוש באבן ק\"מ אפשרי"
+        },
+        {
+          "name": "סיום",
+          "type": "Character",
+          "description": "שם המקום בו המקטע של הפרויקט מסתיים",
+          "comment": "לרוב שם המקום יהיה צומת, אך גם שימוש באבן ק\"מ אפשרי"
+        },
+        {
+          "name": "סוג פרויקט (פעולה)",
+          "type": "Integer",
+          "description": "קוד סוג הפעולה המבוצעת",
+          "vals": {
+            "1": "הקמה",
+            "2": "הרחבה",
+            "3": "שדרוג",
+            "4": "שינוי"
+          }
+        },
+        {
+          "name": "סוג דרך (היררכיה)",
+          "type": "integer",
+          "description": "קוד היררכית מקטע הדרך",
+          "vals": {
+            "1": "דרך מהירה",
+            "2": "דרך ראשית ממוחלפת",
+            "3": "דרך ראשית",
+            "4": "דרך אזורית",
+            "5": "עורק עירוני",
+            "6": null
+          }
+        },
+        {
+          "name": "אורך",
+          "type": "real",
+          "description": "אורך המקטע"
+        },
+        {
+          "name": "נתיבים",
+          "type": "integer",
+          "description": "מספר נתיבים כולל העדפה"
+        },
+        {
+          "name": "סוג העדפה",
+          "type": "integer",
+          "description": "קוד סוג ההעדפה",
+          "vals": {
+            "0": "ללא העדפה",
+            "0.5": "שותצ",
+            "1": "נתיב העדפה בזכות הדרך (נתצ/נרת)"
+          }
+        },
+        {
+          "name": "סטטוס",
+          "type": "Character",
+          "description": "סטטוס הפרויקט"
+        },
+        {
+          "name": "רשות אחראית",
+          "type": "Character",
+          "description": "התאגיד האחראי על הפרויקט"
+        },
+        {
+          "name": "שנת יעד",
+          "type": "Character",
+          "description": "שנת היעד של הפרויקט",
+          "comment": "יכול להכיל ערכים חסרים במקרה של אי ודאות"
+        }
+      ]
+    }
+  ]
+}
