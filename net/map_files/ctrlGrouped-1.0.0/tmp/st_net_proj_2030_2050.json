@@ -7,7 +7,7 @@
   "Description": ["חבילת קבצים המכילה את רשת הדרכים מדרג אזורי ומעלה בישראל, בשנים 2030 ו2050, את הפרויקטים המתוכננים ברשת לשנת 2030 ברמת מקטעים ומחלפים, ולשנת 2050 ברמת מקטעים.", "חבילה זו נוצרה במטרה לפרט את המצב התכנוני של רשת הדרכים ברמה האסטרטגית  לשנות יעד עתידיות, לטובת שימוש המתכננים."],
   "Created": "05/09/2023",
   "Version": "0.2",
-  "Last updated": "28/09/2023",
+  "Last updated": "18/10/2023",
   "Temporal coverage": "מכיל התייחסות לשנות היעד 2030 ו2050",
   "Dataset file": "st_net_proj_2030_2050.zip",
   "Metadata creator": "עדו קליין",
@@ -17,7 +17,7 @@
   "Frequency of update": "המאגר מתעדכן בתדירות לא קבועה",
   "Spatial coverage": "ארצי",
   "Data quality": "מבוסס רשת בסיס 2020. מבוסס על סנכרון חד פעמי שהתקיים ב2023",
-  "Files list": ["projline2030.shp", "projnode2030.shp", "proj2050.shp", "rdsST2030.shp", "rdsST2050.shp", "projbuilt.shp", "projlist.xlsx"],
+  "Files list": ["projline2030.shp", "projnode2030.shp", "proj2050.shp", "rdsST2030.shp", "rdsST2050.shp", "projbuilt.shp"],
   "Files": [
     {
       "File name": "projline2030.shp",
@@ -140,7 +140,7 @@
         {
           "name": "fid",
           "type": "Integer",
-          "description": "מזהה פרויקט רץ"
+          "description": "מק\"ט אינוונטר"
         }
       ]
     },
@@ -228,7 +228,7 @@
         {
           "name": "fid",
           "type": "Integer",
-          "description": "מזהה פרויקט רץ"
+          "description": "מק\"ט אינוונטר"
         }
       ]
     },
@@ -312,7 +312,7 @@
         {
           "name": "fid",
           "type": "Integer",
-          "description": "מזהה פרויקט רץ"
+          "description": "מק\"ט אינוונטר"
         }
       ]
     },
@@ -506,13 +506,13 @@
         },
         {
           "name": "acta",
-          "type": "Integer",
-          "description": "קוד סוג הפעולה המבוצעת"
+          "type": "Character",
+          "description": "סוג הפעולה המבוצעת"
         },
         {
           "name": "prj_class",
           "type": "Character",
-          "description": "קוד היררכית מקטע הדרך"
+          "description": "היררכית מקטע הדרך"
         },
         {
           "name": "prj_lns",
@@ -523,124 +523,6 @@
           "name": "inter",
           "type": "Character",
           "description": "האם מדובר במחלף"
-        }
-      ]
-    },
-    {
-      "File name": "projlist.xlsx",
-      "File format": "shp",
-      "File description": "רשימת הפרויקטים האורכיים במסגרת התכנית האסטרטגית המיועדת ל2050",
-      "File spatial coverage": "ארצי",
-      "File fields": [
-        {
-          "name": "מק\"ט",
-          "type": "Integer",
-          "description": null
-        },
-        {
-          "name": "מחוז",
-          "type": "Integer",
-          "description": "קוד מחוז",
-          "vals": {
-            "1": "צפון",
-            "2": "מרכז",
-            "3": "דרום",
-            "4": "יו\"ש"
-          }
-        },
-        {
-          "name": "שם פרויקט",
-          "type": "Character",
-          "description": "שם הפרויקט"
-        },
-        {
-          "name": "מס' דרך",
-          "type": "Character",
-          "description": "מספר הכביש בו מתבצע הפרויקט"
-        },
-        {
-          "name": "מק\"מ",
-          "type": "Character",
-          "description": "אבן הק\"מ בו המקטע של הפרויקט מתחיל",
-          "comment": "במידה ואבן הק\"מ נמצאת על כביש אחר, הערך יהיה: (מספר הכביש האחר) - (מספר אבן הק\"מ)"
-        },
-        {
-          "name": "עד ק\"מ",
-          "type": "Character",
-          "description": "אבן הק\"מ בו המקטע של הפרויקט מסתיים",
-          "comment": "במידה ואבן הק\"מ נמצאת על כביש אחר, הערך יהיה: (מספר הכביש האחר) - (מספר אבן הק\"מ)"
-        },
-        {
-          "name": "התחלה",
-          "type": "Character",
-          "description": "שם המקום בו המקטע של הפרויקט מתחיל",
-          "comment": "לרוב שם המקום יהיה צומת, אך גם שימוש באבן ק\"מ אפשרי"
-        },
-        {
-          "name": "סיום",
-          "type": "Character",
-          "description": "שם המקום בו המקטע של הפרויקט מסתיים",
-          "comment": "לרוב שם המקום יהיה צומת, אך גם שימוש באבן ק\"מ אפשרי"
-        },
-        {
-          "name": "סוג פרויקט (פעולה)",
-          "type": "Integer",
-          "description": "קוד סוג הפעולה המבוצעת",
-          "vals": {
-            "1": "הקמה",
-            "2": "הרחבה",
-            "3": "שדרוג",
-            "4": "שינוי"
-          }
-        },
-        {
-          "name": "סוג דרך (היררכיה)",
-          "type": "integer",
-          "description": "קוד היררכית מקטע הדרך",
-          "vals": {
-            "1": "דרך מהירה",
-            "2": "דרך ראשית ממוחלפת",
-            "3": "דרך ראשית",
-            "4": "דרך אזורית",
-            "5": "עורק עירוני",
-            "6": null
-          }
-        },
-        {
-          "name": "אורך",
-          "type": "real",
-          "description": "אורך המקטע"
-        },
-        {
-          "name": "נתיבים",
-          "type": "integer",
-          "description": "מספר נתיבים כולל העדפה"
-        },
-        {
-          "name": "סוג העדפה",
-          "type": "integer",
-          "description": "קוד סוג ההעדפה",
-          "vals": {
-            "0": "ללא העדפה",
-            "0.5": "שותצ",
-            "1": "נתיב העדפה בזכות הדרך (נתצ/נרת)"
-          }
-        },
-        {
-          "name": "סטטוס",
-          "type": "Character",
-          "description": "סטטוס הפרויקט"
-        },
-        {
-          "name": "רשות אחראית",
-          "type": "Character",
-          "description": "התאגיד האחראי על הפרויקט"
-        },
-        {
-          "name": "שנת יעד",
-          "type": "Character",
-          "description": "שנת היעד של הפרויקט",
-          "comment": "יכול להכיל ערכים חסרים במקרה של אי ודאות"
         }
       ]
     }

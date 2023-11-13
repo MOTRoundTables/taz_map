@@ -1,15 +1,17 @@
 meta tools report
-Tue Oct 17
+Wed Oct 18
+reading C:/Users/idshk/OneDrive/idos_shit/shared_network_scenarios/versions/Roads_version 0.2/tmp/st_net_proj_2030_2050.xlsx
+complex file
+finished converting meta from excel to json
 
 This is: התכנית האסטרטגית לדרכים 2030-2050, שלב ב'
-it includes 7 data files:
+it includes 6 data files:
 1: projline2030.shp
 2: projnode2030.shp
 3: proj2050.shp
 4: rdsST2030.shp
 5: rdsST2050.shp
 6: projbuilt.shp
-7: projlist.xlsx
 
 Metafile Header:
     Publisher: משרד התחבורה
@@ -105,56 +107,5 @@ Geometry type: MULTILINESTRING
 Dimension:     XY
 Bounding box:  xmin: 34.28768 ymin: 29.90655 xmax: 35.61272 ymax: 33.19141
 Geodetic CRS:  WGS 84
-
-7: check fields for projlist.xlsx
-
-
-Description: רשימת הפרויקטים האורכיים במסגרת התכנית האסטרטגית המיועדת ל2050
-
-Error discrepacies: file fields not in meta: ...1
-Error discrepacies: file fields not in meta: ...2
-Error discrepacies: file fields not in meta: ...3
-Error discrepacies: file fields not in meta: משרד התחבורה - אגף תכנון מערכתי - תחום מודלים, מידע ומחקר
-Error discrepacies: file fields not in meta: ...5
-Error discrepacies: file fields not in meta: גרסה:
-Error discrepacies: file fields not in meta: 0.2
-Error discrepacies: file fields not in meta: ...8
-Error discrepacies: file fields not in meta: ...9
-Error discrepacies: file fields not in meta: ...10
-Error discrepacies: file fields not in meta: ...11
-Error discrepacies: file fields not in meta: ...12
-Error discrepacies: file fields not in meta: ...13
-Error discrepacies: file fields not in meta: ...14
-Error discrepacies: file fields not in meta: ...15
-Error discrepacies: file fields not in meta: ...16
-Error discrepacies: file fields not in meta: ...17
-Error discrepacies: meta fields not in file: מק"ט
-Error discrepacies: meta fields not in file: מחוז
-Error discrepacies: meta fields not in file: שם פרויקט
-Error discrepacies: meta fields not in file: מס' דרך
-Error discrepacies: meta fields not in file: מק"מ
-Error discrepacies: meta fields not in file: עד ק"מ
-Error discrepacies: meta fields not in file: התחלה
-Error discrepacies: meta fields not in file: סיום
-Error discrepacies: meta fields not in file: סוג פרויקט (פעולה)
-Error discrepacies: meta fields not in file: סוג דרך (היררכיה)
-Error discrepacies: meta fields not in file: אורך
-Error discrepacies: meta fields not in file: נתיבים
-Error discrepacies: meta fields not in file: סוג העדפה
-Error discrepacies: meta fields not in file: סטטוס
-Error discrepacies: meta fields not in file: רשות אחראית
-Error discrepacies: meta fields not in file: שנת יעד
-
-
-── Data Summary ────────────────────────
-                           Values
-Name                       f1    
-Number of rows             314   
-Number of columns          17    
-_______________________          
-Column type frequency:           
-  character                17    
-________________________         
-Group variables            None  
 
 Finished
