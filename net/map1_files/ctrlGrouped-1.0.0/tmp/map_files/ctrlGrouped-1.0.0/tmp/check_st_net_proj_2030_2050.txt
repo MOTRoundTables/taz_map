@@ -1,0 +1,160 @@
+meta tools report
+Tue Oct 17
+
+This is: התכנית האסטרטגית לדרכים 2030-2050, שלב ב'
+it includes 7 data files:
+1: projline2030.shp
+2: projnode2030.shp
+3: proj2050.shp
+4: rdsST2030.shp
+5: rdsST2050.shp
+6: projbuilt.shp
+7: projlist.xlsx
+
+Metafile Header:
+    Publisher: משרד התחבורה
+      Contact: עדו קליין
+Contact Email: idshklein@gmail.com
+       Author: משרד התחבורה
+- - - - - - -
+       Title: התכנית האסטרטגית לדרכים 2030-2050, שלב ב'
+     Created: 05/09/2023
+Temporal coverage: מכיל התייחסות לשנות היעד 2030 ו2050
+Description:
+חבילת קבצים המכילה את רשת הדרכים מדרג אזורי ומעלה בישראל, בשנים 2030 ו2050, את הפרויקטים המתוכננים ברשת לשנת 2030 ברמת מקטעים ומחלפים, ולשנת 2050 ברמת מקטעים.
+חבילה זו נוצרה במטרה לפרט את המצב התכנוני של רשת הדרכים ברמה האסטרטגית  לשנות יעד עתידיות, לטובת שימוש המתכננים.
+
+
+check individual files
+
+
+1: check fields for projline2030.shp
+
+
+Description: רשימת הפרויקטים האורכיים במסגרת התכנית האסטרטגית המיועדת ל2030
+
+
+
+Simple feature collection with 143 features and 17 fields (with 2 geometries empty)
+Geometry type: GEOMETRY
+Dimension:     XY
+Bounding box:  xmin: 143062 ymin: 433402.9 xmax: 261187.8 ymax: 769411
+Projected CRS: Israel 1993 / Israeli TM Grid
+
+2: check fields for projnode2030.shp
+
+
+Description: רשימת הפרויקטים הנקודתיים במסגרת התכנית האסטרטגית המיועדת ל2030
+
+
+
+Simple feature collection with 22 features and 12 fields (with 1 geometry empty)
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: 34.82101 ymin: 31.91243 xmax: 35.30087 ymax: 32.9198
+Geodetic CRS:  WGS 84
+
+3: check fields for proj2050.shp
+
+
+Description: רשימת הפרויקטים האורכיים במסגרת התכנית האסטרטגית המיועדת ל2050
+
+
+
+Simple feature collection with 91 features and 10 fields
+Geometry type: LINESTRING
+Dimension:     XY
+Bounding box:  xmin: 133566.5 ymin: 382737.4 xmax: 274595.2 ymax: 793179.8
+Projected CRS: Israel 1993 / Israeli TM Grid
+
+4: check fields for rdsST2030.shp
+
+
+Description: רשת הדרכים הארצית לשנת 2030
+
+
+
+Simple feature collection with 2292 features and 9 fields
+Geometry type: LINESTRING
+Dimension:     XY
+Bounding box:  xmin: 130464.6 ymin: 378186.4 xmax: 280229.5 ymax: 798495.8
+Projected CRS: Israel 1993 / Israeli TM Grid
+
+5: check fields for rdsST2050.shp
+
+
+Description: רשת הדרכים הארצית לשנת 2050, ברזוצולציה של מקטעים בין צמתים
+
+
+
+Simple feature collection with 2319 features and 9 fields
+Geometry type: LINESTRING
+Dimension:     XY
+Bounding box:  xmin: 130464.6 ymin: 378186.4 xmax: 280229.5 ymax: 798495.8
+Projected CRS: Israel 1993 / Israeli TM Grid
+
+6: check fields for projbuilt.shp
+
+
+Description: רשימת הפרויקטים שנפתחו לתנועה בין 1.1.2020 ו1.9.2023
+
+
+
+Simple feature collection with 55 features and 7 fields
+Geometry type: MULTILINESTRING
+Dimension:     XY
+Bounding box:  xmin: 34.28768 ymin: 29.90655 xmax: 35.61272 ymax: 33.19141
+Geodetic CRS:  WGS 84
+
+7: check fields for projlist.xlsx
+
+
+Description: רשימת הפרויקטים האורכיים במסגרת התכנית האסטרטגית המיועדת ל2050
+
+Error discrepacies: file fields not in meta: ...1
+Error discrepacies: file fields not in meta: ...2
+Error discrepacies: file fields not in meta: ...3
+Error discrepacies: file fields not in meta: משרד התחבורה - אגף תכנון מערכתי - תחום מודלים, מידע ומחקר
+Error discrepacies: file fields not in meta: ...5
+Error discrepacies: file fields not in meta: גרסה:
+Error discrepacies: file fields not in meta: 0.2
+Error discrepacies: file fields not in meta: ...8
+Error discrepacies: file fields not in meta: ...9
+Error discrepacies: file fields not in meta: ...10
+Error discrepacies: file fields not in meta: ...11
+Error discrepacies: file fields not in meta: ...12
+Error discrepacies: file fields not in meta: ...13
+Error discrepacies: file fields not in meta: ...14
+Error discrepacies: file fields not in meta: ...15
+Error discrepacies: file fields not in meta: ...16
+Error discrepacies: file fields not in meta: ...17
+Error discrepacies: meta fields not in file: מק"ט
+Error discrepacies: meta fields not in file: מחוז
+Error discrepacies: meta fields not in file: שם פרויקט
+Error discrepacies: meta fields not in file: מס' דרך
+Error discrepacies: meta fields not in file: מק"מ
+Error discrepacies: meta fields not in file: עד ק"מ
+Error discrepacies: meta fields not in file: התחלה
+Error discrepacies: meta fields not in file: סיום
+Error discrepacies: meta fields not in file: סוג פרויקט (פעולה)
+Error discrepacies: meta fields not in file: סוג דרך (היררכיה)
+Error discrepacies: meta fields not in file: אורך
+Error discrepacies: meta fields not in file: נתיבים
+Error discrepacies: meta fields not in file: סוג העדפה
+Error discrepacies: meta fields not in file: סטטוס
+Error discrepacies: meta fields not in file: רשות אחראית
+Error discrepacies: meta fields not in file: שנת יעד
+
+
+── Data Summary ────────────────────────
+                           Values
+Name                       f1    
+Number of rows             314   
+Number of columns          17    
+_______________________          
+Column type frequency:           
+  character                17    
+________________________         
+Group variables            None  
+
+Finished
